@@ -4,7 +4,7 @@ const hbs = require('hbs')
 const geocode = require('./utils/geocode')
 
 const app = express()
-
+const port = process.env.PORT || 3000
 // Shows path of directory and file where the project is lying
 
 // console.log(__dirname)
@@ -110,6 +110,6 @@ app.get('*', (req, res)=>{
 })
 
 // Initialize the server 
-app.listen(3000, ()=>{
-    console.log('Server is up and running at port 3000')
+app.listen(port, ()=>{
+    console.log(`Server is up and running at port ${port}`)
 })

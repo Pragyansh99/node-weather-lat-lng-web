@@ -1,4 +1,4 @@
-// console.log('Client side js loaded ');
+// http://localhost:3000
 
 const locationForm = document.querySelector('form')
 const search = document.querySelector('input')
@@ -8,12 +8,10 @@ const messageTwo = document.querySelector('#msg-2')
 
 
 locationForm.addEventListener('submit',(e)=>{
-    
     messageOne.textContent = 'Loading ... '
     messageTwo.textContent = ''
-
     e.preventDefault();
-    fetch('http://localhost:3000/forecast?search='+search.value).then((response)=>{
+    fetch('/forecast?search='+search.value).then((response)=>{
         response.json().then((data)=>{
             console.log(data)
         if(data.error_message) {
